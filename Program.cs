@@ -1,73 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace abstractclass
+namespace Armstrong_number
 {
-    abstract class person // abstract class cantnot create object or abstract method does not have body.
-    {
-        public string first_name;
-        public string second_name;
-        public int age;//public abstract void show();
-        public long phonenumber;
-
-        public abstract void printdetails();
-    }
-    class student : person
-    {
-        public int rollno;
-        public int fees;
-
-        public override void printdetails()
-        {
-            string name = this.first_name +" " + this.second_name;
-            Console.WriteLine(name);
-            Console.WriteLine(this.age);
-            Console.WriteLine(this.phonenumber);
-            Console.WriteLine(this.rollno);
-            Console.WriteLine(this.fees);
-        }
-    }
-    class teacher : person
-    {
-        public string qualification;
-        public int salary;
-
-        public override void printdetails()
-        {
-            string name = this.first_name + " " + this.second_name;
-            Console.WriteLine(name);
-            Console.WriteLine(this.age);
-            Console.WriteLine(this.phonenumber);
-            Console.WriteLine(this.qualification);
-            Console.WriteLine(this.salary);
-        }
-    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            student alok=new student(); //creating the object for student
-            alok.first_name = "alok";
-            alok.second_name = "sharma";
-            alok.age = 23;
-            alok.phonenumber = 111;
-            alok.rollno = 123;
-            alok.fees = 2000;
-            alok.printdetails();
+            int num = 153;
+            int rem;
+            int cube;
+            int result = 0;
+            int temp = num;
 
-            Console.WriteLine("-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            while (num != 0)
+            {
+                rem = num % 10;
+                cube = rem * rem * rem;
+                result = result + cube;
+                num = num / 10;
+            }
+            num = temp;
+            if (num==result)
+            {
+                Console.Write("number is armstrong");
 
-            teacher alok1 = new teacher(); // creatinf the object for teacher
-            alok1.first_name = "alok";
-            alok1.second_name = "sharma";
-            alok1.age = 23;
-            alok1.phonenumber = 111;
-            alok1.qualification = "Bsc cs";
-            alok1.salary = 2000;
-            alok1.printdetails();
+            }
+            else
+            {
+                Console.Write("number is not armstrng");
+            }
             Console.ReadLine();
         }
     }

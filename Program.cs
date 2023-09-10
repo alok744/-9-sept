@@ -4,46 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator1
+namespace @interface
 {
+    interface IEmployee
+    {
+        void show();
+    }
+    class partimeEmployees : IEmployee
+    {
+        public void show()
+        {
+            Console.WriteLine("this is a method on IEmployee interface");
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            int res;
-            Console.Write("enter the number");
-            int num1=Convert.ToInt32(Console.ReadLine());
-            Console.Write("enter the number2");
-            int num2=Convert.ToInt32(Console.ReadLine());
-            Console.Write("enter the symbol(/,*,+,-)");
-            string symbol=Console.ReadLine();
-
-            switch (symbol)
-
-            {
-                case "+":
-                    res = num1 + num2;
-                    Console.WriteLine("Addition"+res);
-                    break;
-                case "-":
-                    res = num1 - num2;
-                    Console.WriteLine("Subtraction" +res);
-                    break;
-                case "*":
-                    res = num1 * num2;
-                    Console.WriteLine("Multiplication" +res);
-                    break;
-                case "/":
-                    res = num1 / num2;
-                    Console.WriteLine("division" +res);
-                    break;
-
-                default:
-                    Console.WriteLine("worng input:");
-                    break;
-
-
-            }
+            partimeEmployees ptr=new partimeEmployees();
+            ptr.show();
             Console.ReadLine();
         }
     }

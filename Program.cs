@@ -1,39 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
-using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Armstrong_number
+namespace calculator1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int num = 153;
-            int rem;
-            int cube;
-            int result = 0;
-            int temp = num;
+            int res;
+            Console.Write("enter the number");
+            int num1=Convert.ToInt32(Console.ReadLine());
+            Console.Write("enter the number2");
+            int num2=Convert.ToInt32(Console.ReadLine());
+            Console.Write("enter the symbol(/,*,+,-)");
+            string symbol=Console.ReadLine();
 
-            while (num != 0)
-            {
-                rem = num % 10;
-                cube = rem * rem * rem;
-                result = result + cube;
-                num = num / 10;
-            }
-            num = temp;
-            if (num==result)
-            {
-                Console.Write("number is armstrong");
+            switch (symbol)
 
-            }
-            else
             {
-                Console.Write("number is not armstrng");
+                case "+":
+                    res = num1 + num2;
+                    Console.WriteLine("Addition"+res);
+                    break;
+                case "-":
+                    res = num1 - num2;
+                    Console.WriteLine("Subtraction" +res);
+                    break;
+                case "*":
+                    res = num1 * num2;
+                    Console.WriteLine("Multiplication" +res);
+                    break;
+                case "/":
+                    res = num1 / num2;
+                    Console.WriteLine("division" +res);
+                    break;
+
+                default:
+                    Console.WriteLine("worng input:");
+                    break;
+
+
             }
             Console.ReadLine();
         }

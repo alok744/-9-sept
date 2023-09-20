@@ -1,38 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace prime_number
+namespace abstract_method1
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public abstract class alok //abstract class
         {
-            int count = 0;
-            Console.WriteLine("Enter the number");
-            int num = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 1; i <= num; i++)
-            {
-                if (num % i == 0)
-                {
-                    count++;
-                }
-
-            }
-            if (count == 2)
-            {
-                Console.WriteLine("Number is prime");
-            }
-            else
-            {
-                Console.WriteLine("it is not a prime number");
-            }
-            Console.ReadLine();
-
+            public abstract void alok1();//abstract method;
         }
 
+        public class sudeep : alok
+        {
+            public override void alok1()
+            {
+                Console.WriteLine("hello ki halchal");
+            }
+        }
+        public class sudeep1:alok
+        {
+            public override void alok1()
+            {
+                Console.WriteLine("hello bachho"); 
+            }
+        }
+        //main method
+        static void Main(string[] args)
+        {
+            //'obj' is object of class 
+            // alok is class
+            ////instantiate class 'alok'
+            alok obj;
+            obj =new sudeep();
+            
+
+            //instantiate class 'alok1'
+            obj = new sudeep1();
+            //call 'gfg1()' of class 'g2'
+            obj.alok1();
+            Console.ReadLine();
+        }
     }
+}

@@ -4,43 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace abstract_method1
+namespace interface1
 {
     internal class Program
     {
-        public abstract class alok //abstract class
+        interface interface1
         {
-            public abstract void alok1();//abstract method;
+            //method having only declaration
+            //not defination
+            void show();
         }
-
-        public class sudeep : alok
+        class myclass:interface1
         {
-            public override void alok1()
+            public void show()
             {
-                Console.WriteLine("hello ki halchal");
+                Console.WriteLine("welcome to c sharp world!!!");
             }
+            
         }
-        public class sudeep1:alok
-        {
-            public override void alok1()
-            {
-                Console.WriteLine("hello bachho"); 
-            }
-        }
-        //main method
+        // main method
         static void Main(string[] args)
         {
-            //'obj' is object of class 
-            // alok is class
-            ////instantiate class 'alok'
-            alok obj;
-            obj =new sudeep();
-            
-
-            //instantiate class 'alok1'
-            obj = new sudeep1();
-            //call 'gfg1()' of class 'g2'
-            obj.alok1();
+            //creating obj
+            myclass obj1=new myclass();
+            //cretating method
+            obj1.show();
             Console.ReadLine();
         }
     }

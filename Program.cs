@@ -1,47 +1,46 @@
-﻿using System;
+﻿//namespace Recursion
+//{
+//    class program
+//    {
+//        int num = 5;
+//        int result = 1;
+//        int factorial() 
+//        {
+//            if(num == 0)
+//            {
+//                return 1;
+//            }
+//            result = result * num;
+//            num--;
+//            factorial();
+//            return result;
+//        }
 
-namespace reverse_string1
+//        static void Main(string[] args) 
+//        {                      
+//            program obj = new program();
+//            int factorial=obj.factorial();
+//            Console.WriteLine("Factorial is:"+factorial);
+//            Console.ReadKey();
+//        }
+//    }
+//}
+namespace Recursion
 {
-    class Palindrome
+    class program
     {
         static void Main(string[] args)
         {
-            string name ;
-            Console.WriteLine("enter the string");
-            name = Console.ReadLine();
-            string reverse=string.Empty;
-            for(int i=name.Length-1; i>=0; i--)
+            int i;
+            int num = 4;
+            int result = 1;
+            for (i = 1; i<= num; i++)
             {
-                reverse += name[i].ToString();
+                result = result * i;
+             
             }
-            if (reverse == name)
-            {
-                Console.WriteLine("string is palindrome");
-            }
-            else
-            {
-                Console.WriteLine("string is not a palindrome");
-            }
-            
-            //string _inputstr, _reversestr = string.Empty;
-            //Console.Write("Enter a string : ");
-            //_inputstr = Console.ReadLine();
-            //if (_inputstr != null)
-            //{
-            //    for (int i = _inputstr.Length - 1; i >= 0; i--)
-            //    {
-            //        _reversestr += _inputstr[i].ToString();
-            //    }
-            //    if (_reversestr == _inputstr)
-            //    {
-            //        Console.WriteLine("String is Palindrome Input = {0} and Output= {1}", _inputstr, _reversestr);
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("String is not Palindrome Input = {0} and Output= {1}", _inputstr, _reversestr);
-            //    }
-            //}
-            //Console.ReadLine();
+            Console.WriteLine(result);
+            Console.ReadLine();
         }
     }
 }

@@ -1,46 +1,22 @@
-﻿//namespace Recursion
-//{
-//    class program
-//    {
-//        int num = 5;
-//        int result = 1;
-//        int factorial() 
-//        {
-//            if(num == 0)
-//            {
-//                return 1;
-//            }
-//            result = result * num;
-//            num--;
-//            factorial();
-//            return result;
-//        }
-
-//        static void Main(string[] args) 
-//        {                      
-//            program obj = new program();
-//            int factorial=obj.factorial();
-//            Console.WriteLine("Factorial is:"+factorial);
-//            Console.ReadKey();
-//        }
-//    }
-//}
-namespace Recursion
+﻿using System;
+namespace fabonacci_series
 {
     class program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
-            int i;
-            int num = 4;
-            int result = 1;
-            for (i = 1; i<= num; i++)
+            int n1=0, n2=2,n3, i, number;
+            int Lcm = 0;
+            Console.WriteLine("Enter the Number");
+            number = int.Parse(Console.ReadLine());
+            Console.Write(n1 + " " + n2 + " ");
+            for (i = 2; i < number; ++i) //loop starts from 2 because 0 and 1 are already printed    
             {
-                result = result * i;
-             
+                n3 = n1 + n2;
+                Console.Write(n3 + " ");
+                n1 = n2;
+                n2 = n3;
             }
-            Console.WriteLine(result);
-            Console.ReadLine();
         }
     }
 }
